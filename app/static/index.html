@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
+/* Палитра цветов интерфейса */
         :root {
             --brand:#437bba;
             --brand-dark:#34679f;
@@ -23,6 +24,7 @@
         }
 
         html { background:var(--bg); }
+/* Базовое оформление страницы */
         body {
             background:var(--bg);
             color:var(--text);
@@ -30,6 +32,7 @@
             font-size:15px;
         }
 
+/* Фон экрана авторизации */
         .auth-bg {
             min-height:100vh;
             display:flex;
@@ -38,6 +41,7 @@
             padding:24px;
             background:#e9eef5;
         }
+/* Карточка входа и регистрации */
         .auth-card {
             width:100%;
             max-width:420px;
@@ -47,12 +51,14 @@
         }
         .auth-card h3 { color:#23364d; }
         .nav-pills .nav-link { color:var(--brand); border-radius:8px; }
+/* Активная вкладка авторизации */
         .nav-pills .nav-link.active {
             background:var(--brand);
             color:#fff;
         }
 
         .layout { display:flex; min-height:100vh; }
+/* Боковое меню приложения */
         .sidebar {
             width:288px;
             background:#ffffff;
@@ -65,6 +71,7 @@
             overflow-y:auto;
             border-right:1px solid var(--line);
         }
+/* Название приложения в меню */
         .brand {
             display:flex;
             align-items:center;
@@ -74,6 +81,7 @@
             margin-bottom:18px;
             color:#243447;
         }
+/* Значок приложения в меню */
         .brand-mark {
             width:32px;
             height:32px;
@@ -88,6 +96,7 @@
         }
         .sidebar label,
         .sidebar .small.text-secondary { color:#7b8794!important; }
+/* Пункт бокового меню */
         .sidebar .nav-link {
             color:#374151;
             border-radius:9px;
@@ -98,6 +107,7 @@
         }
         .sidebar .nav-link i { color:#74869c; }
         .sidebar .nav-link.active,
+/* Активный пункт бокового меню */
         .sidebar .nav-link:hover {
             background:var(--brand-soft);
             color:var(--brand);
@@ -106,23 +116,27 @@
         .sidebar .nav-link.active i,
         .sidebar .nav-link:hover i { color:var(--brand); }
         .sidebar .border-secondary { border-color:var(--line)!important; }
+/* Кнопка выхода в меню */
         .sidebar .btn-outline-light {
             color:#4b5563;
             border-color:#cfd7e2;
             background:#fff;
         }
+/* Кнопка выхода при наведении */
         .sidebar .btn-outline-light:hover {
             color:#fff;
             background:var(--brand);
             border-color:var(--brand);
         }
 
+/* Выпадающий список ботов */
         .bot-select {
             background:#fff;
             color:var(--text);
             border:1px solid #cfd7e2;
             border-radius:9px;
         }
+/* Фокус списка ботов */
         .bot-select:focus {
             background:#fff;
             color:var(--text);
@@ -130,11 +144,13 @@
             box-shadow:0 0 0 .18rem rgba(67,123,186,.16);
         }
 
+/* Основная область интерфейса */
         .content {
             margin-left:288px;
             width:calc(100% - 288px);
             padding:24px 26px;
         }
+/* Верхняя панель раздела */
         .topbar {
             background:var(--panel);
             border:1px solid var(--line);
@@ -150,6 +166,7 @@
         .topbar h4 { color:#25364b; }
         .text-muted-2 { color:var(--muted); }
 
+/* Карточки разделов */
         .card {
             border:1px solid var(--line);
             border-radius:12px;
@@ -161,43 +178,52 @@
 
         .btn { border-radius:8px; }
         .btn-brand,
+/* Основная кнопка действия */
         .btn-primary {
             background:var(--brand)!important;
             color:white!important;
             border-color:var(--brand)!important;
         }
         .btn-brand:hover,
+/* Основная кнопка при наведении */
         .btn-primary:hover {
             background:var(--brand-dark)!important;
             border-color:var(--brand-dark)!important;
             color:#fff!important;
         }
+/* Контурная кнопка действия */
         .btn-outline-primary {
             color:var(--brand)!important;
             border-color:var(--brand)!important;
         }
+/* Контурная кнопка при наведении */
         .btn-outline-primary:hover {
             color:#fff!important;
             background:var(--brand)!important;
             border-color:var(--brand)!important;
         }
+/* Кнопка опасного действия */
         .btn-danger {
             background:var(--danger)!important;
             border-color:var(--danger)!important;
         }
+/* Кнопка опасного действия при наведении */
         .btn-danger:hover {
             background:var(--danger-dark)!important;
             border-color:var(--danger-dark)!important;
         }
+/* Кнопка успешного действия */
         .btn-success {
             background:var(--success)!important;
             border-color:var(--success)!important;
             color:#fff!important;
         }
+/* Кнопка успешного действия при наведении */
         .btn-success:hover {
             background:var(--success-dark)!important;
             border-color:var(--success-dark)!important;
         }
+/* Светлая вспомогательная кнопка */
         .btn-light {
             background:#f6f8fb;
             border-color:#dce3ec;
@@ -215,17 +241,20 @@
         .border-success { border-color:var(--success)!important; }
 
         .form-control,
+/* Поля ввода и списки */
         .form-select {
             border-radius:8px;
             border-color:#cfd7e2;
         }
         .form-control:focus,
+/* Фокус полей ввода и списков */
         .form-select:focus {
             border-color:var(--brand);
             box-shadow:0 0 0 .18rem rgba(67,123,186,.16);
         }
         textarea { resize:vertical; }
 
+/* Карточка показателя статистики */
         .stat {
             background:#fff;
             border:1px solid var(--line);
@@ -235,6 +264,7 @@
             min-height:96px;
         }
         .stat small { color:var(--muted); font-size:.82rem; }
+/* Значение показателя статистики */
         .stat strong {
             display:inline-block;
             margin-top:4px;
@@ -246,15 +276,18 @@
         .section.active { display:block; }
         .admin-only.hidden, .operator-hidden.hidden { display:none!important; }
 
+/* Карточка диалога */
         .dialog-card {
             cursor:pointer;
             border:1px solid var(--line)!important;
             box-shadow:none;
         }
+/* Карточка диалога при наведении */
         .dialog-card:hover {
             border-color:var(--brand)!important;
             background:#fbfdff;
         }
+/* Бейдж роли пользователя */
         .role-badge {
             background:#eef5fc;
             color:var(--brand);
@@ -264,16 +297,19 @@
             font-size:.75rem;
         }
         .table td { vertical-align:middle; }
+/* Заголовки таблиц */
         .table thead th {
             color:#5f6f82;
             font-size:.84rem;
             font-weight:600;
             border-bottom-color:var(--line);
         }
+/* Метки категорий и интентов */
         .badge {
             border-radius:7px;
             font-weight:500;
         }
+/* Блок предварительного просмотра */
         pre {
             background:#f1f5f9;
             border:1px solid #dde5ee;
@@ -282,11 +318,13 @@
         }
 
         .scenario-list { display:grid; gap:10px; }
+/* Всплывающее уведомление */
         .notice {
             position:fixed; right:22px; bottom:22px; z-index:2000;
             min-width:280px; max-width:460px; display:none;
             border-radius:12px; box-shadow:0 10px 26px rgba(31,41,51,.14);
         }
+/* Карточка простого блока сценария */
         .node-card {
             border:1px solid #c9d9ec;
             background:#fff;
@@ -297,6 +335,7 @@
         .node-card.start { border-color:var(--success); background:#fbfff8; }
         .node-card.operator { border-color:var(--danger); background:#fff9fa; }
         .node-card.end { border-color:#8a98a8; }
+/* Метка элемента сценария */
         .scenario-chip {
             display:inline-flex;
             align-items:center;
@@ -308,6 +347,7 @@
             padding:3px 8px;
             font-size:.78rem;
         }
+/* Элемент списка переходов */
         .edge-item {
             background:#f8fafc;
             border:1px solid #dbe2ea;
@@ -323,6 +363,7 @@
 
         .flow-editor-row { min-height:680px; }
         .flow-workspace { overflow:hidden; min-height:680px; }
+/* Панель редактора сценариев */
         .flow-toolbar {
             min-height:48px;
             display:flex;
@@ -333,6 +374,7 @@
             border-bottom:1px solid var(--line);
             background:#fff;
         }
+/* Поле схемы сценария */
         .flow-canvas {
             position:relative;
             height:640px;
@@ -342,6 +384,7 @@
             background-size:22px 22px;
             border-radius:0 0 12px 12px;
         }
+/* Слой стрелок сценария */
         .flow-edges-svg {
             position:absolute;
             left:0;
@@ -351,12 +394,14 @@
             pointer-events:none;
             z-index:1;
         }
+/* Слой визуальных блоков */
         .flow-blocks-layer {
             position:relative;
             width:2200px;
             height:1400px;
             z-index:2;
         }
+/* Подсказка пустого сценария */
         .flow-empty-hint {
             position:absolute;
             left:50%;
@@ -371,6 +416,7 @@
             padding:24px 28px;
             pointer-events:none;
         }
+/* Визуальный блок сценария */
         .flow-block {
             position:absolute;
             width:245px;
@@ -387,6 +433,7 @@
         .flow-block.selected { border-color:var(--brand); box-shadow:0 12px 28px rgba(67,123,186,.22); }
         .flow-block.connect-source { border-color:#f59e0b; box-shadow:0 12px 28px rgba(245,158,11,.22); }
         .flow-block.invalid { border-color:var(--danger); }
+/* Заголовок визуального блока */
         .flow-block-head {
             display:flex;
             justify-content:space-between;
@@ -398,6 +445,7 @@
         }
         .flow-block-title { font-weight:700; color:#25364b; line-height:1.2; }
         .flow-block-body { padding:10px 12px; color:#4b5563; font-size:.86rem; min-height:48px; }
+/* Нижняя часть визуального блока */
         .flow-block-footer {
             display:flex;
             justify-content:space-between;
@@ -408,6 +456,7 @@
             background:#fff;
         }
         .flow-type-badge,
+/* Метки типа и переходов */
         .flow-mini-badge {
             display:inline-flex;
             align-items:center;
@@ -427,6 +476,7 @@
         .flow-side-panel { position:static; }
         .flow-side-column { display:grid; gap:16px; align-content:start; }
         .flow-side-column .card { width:100%; }
+/* Строка перехода сценария */
         .flow-edge-row {
             border:1px solid #dbe2ea;
             background:#f8fafc;
@@ -434,6 +484,7 @@
             padding:9px 10px;
             margin-bottom:8px;
         }
+/* Подпись стрелки перехода */
         .flow-arrow-label {
             font-size:12px;
             fill:#334155;
@@ -444,6 +495,7 @@
         }
         .flow-error-list { margin:0; padding-left:18px; }
         .flow-error-list li { margin-bottom:6px; }
+/* Кнопка в предпросмотре сценария */
         .flow-preview-button {
             display:inline-block;
             border:1px solid var(--brand);
@@ -454,6 +506,7 @@
             background:#fff;
         }
 
+/* Верстка для маленьких экранов */
         @media(max-width:900px){
             .sidebar{position:relative;width:100%;min-height:auto}
             .layout{display:block}
@@ -466,12 +519,13 @@
 
 <div id="authScreen" class="auth-bg">
     <div class="card auth-card p-4">
-        <h3 class="fw-bold mb-1">Кабинет чат-бота</h3>
-        <p class="text-muted mb-4">Войдите, чтобы управлять ботами и диалогами</p>
+        <h3 class="fw-bold mb-1">Констуктор ВК-ботов</h3>
+        <p class="text-muted mb-4">Войдите, чтобы управлять ботами</p>
         <ul class="nav nav-pills nav-fill mb-3">
             <li class="nav-item"><button id="loginTab" class="nav-link active" onclick="switchAuth('login')">Вход</button></li>
             <li class="nav-item"><button id="regTab" class="nav-link" onclick="switchAuth('reg')">Регистрация</button></li>
         </ul>
+<!-- Поля формы авторизации -->
         <input id="authUsername" class="form-control mb-2" placeholder="Логин или email">
         <input id="authEmail" class="form-control mb-2" placeholder="Email" style="display:none;">
         <input id="authPassword" class="form-control mb-3" type="password" placeholder="Пароль">
@@ -483,12 +537,14 @@
 <div id="noticeBox" class="alert notice" role="alert"></div>
 
 <div id="appScreen" class="layout" style="display:none;">
+<!-- Боковая панель управления -->
     <aside class="sidebar">
         <div class="brand"><span class="brand-mark">К-ВК</span><span>Констуктор ВК-ботов</span></div>
         <label class="small text-secondary mb-1">Активный бот</label>
         <select id="activeBotSelect" class="form-select bot-select mb-3" onchange="changeBot()"></select>
         <div id="connectHint" class="small text-warning mb-3" style="display:none;">Создайте первого бота в разделе «Боты».</div>
 
+<!-- Навигация по разделам -->
         <nav class="nav flex-column">
             <a class="nav-link active" onclick="showSection('dashboard', this)">Статистика</a>
             <a class="nav-link admin-only" onclick="showSection('bots', this)">Боты</a>
@@ -497,6 +553,7 @@
             <a class="nav-link admin-only" onclick="showSection('scenarios', this)">Редактор сценариев</a>
             <a class="nav-link" onclick="showSection('dialogs', this)">Диалоги</a>
             <a class="nav-link admin-only" onclick="showSection('operators', this)">Операторы</a>
+<!-- Переход к настройке сообщений -->
             <a class="nav-link admin-only" onclick="showSection('settings', this)">Редактируемые сообщения</a>
         </nav>
 
@@ -508,6 +565,7 @@
         </div>
     </aside>
 
+<!-- Основная рабочая область -->
     <main class="content">
         <div class="topbar">
             <div>
@@ -517,6 +575,7 @@
             <div class="d-flex gap-2" id="topbarActions"></div>
         </div>
 
+<!-- Раздел статистики -->
         <section id="section-dashboard" class="section active">
             <div class="row g-3 mb-3">
                 <div class="col-md-3"><div class="stat"><small>Всего сообщений</small><br><strong id="totalMsgs">0</strong></div></div>
@@ -534,23 +593,30 @@
             </div>
         </section>
 
+<!-- Раздел управления ботами -->
         <section id="section-bots" class="section">
             <div class="row g-3">
                 <div class="col-lg-5">
                     <div class="card p-3">
-                        <h5 class="fw-bold">Добавить бота</h5>
+<!-- Форма создания и редактирования бота -->
+                        <h5 id="botFormTitle" class="fw-bold">Добавить бота</h5>
+                        <input type="hidden" id="editBotId">
                         <input id="botName" class="form-control mb-2" placeholder="Название бота">
                         <input id="botToken" class="form-control mb-2" placeholder="Токен сообщества">
                         <input id="botGroupLink" class="form-control mb-2" placeholder="Ссылка на сообщество">
                         <input id="botGroupId" class="form-control mb-2" placeholder="ID сообщества">
                         <input id="botConfirm" class="form-control mb-2" placeholder="VK confirmation string">
-                        <button class="btn btn-brand w-100" onclick="createBot()">Создать бота</button>
+                        <div class="d-flex gap-2">
+                            <button id="cancelBotEditBtn" class="btn btn-light w-50" style="display:none;" onclick="resetBotForm()">Отмена</button>
+                            <button id="botSubmitBtn" class="btn btn-brand w-100" onclick="saveBot()">Создать бота</button>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-7"><div class="card p-3"><h5 class="fw-bold">Мои боты</h5><div id="botsList"></div></div></div>
             </div>
         </section>
 
+<!-- Раздел базы знаний -->
         <section id="section-knowledge" class="section">
             <div class="row g-3">
                 <div class="col-lg-4">
@@ -559,6 +625,7 @@
                         <input type="hidden" id="editRuleId">
                         <label class="small fw-bold">Фразы пользователя</label>
                         <input id="keyword" class="form-control mb-2" placeholder="Например: оплата, как оплатить">
+<!-- Подсказка по вводу фраз -->
                         <div class="small text-muted mb-2">Пишите через запятую</div>
                         <label class="small fw-bold">Категория</label>
                         <select id="categorySelect" class="form-select mb-2"></select>
@@ -589,6 +656,7 @@
                                 <div class="small text-muted">Только простые ответы. Ветки и кнопки настраиваются в разделе «Редактор сценариев»</div>
                             </div>
                         </div>
+<!-- Фильтры базы знаний -->
                         <div class="row g-2 mb-3">
                             <div class="col-md-7">
                                 <input id="searchInp" oninput="loadRules()" class="form-control form-control-sm" placeholder="Поиск по фразе или ответу">
@@ -601,6 +669,7 @@
                             </div>
                         </div>
                         <div class="table-responsive">
+<!-- Таблица ответов базы знаний -->
                             <table class="table table-hover">
                                 <thead><tr><th>Фразы</th><th>Категория</th><th>Интент</th><th>Ответ</th><th></th></tr></thead>
                                 <tbody id="rulesTable"></tbody>
@@ -611,6 +680,7 @@
             </div>
         </section>
 
+<!-- Раздел интентов -->
         <section id="section-intents" class="section">
             <div class="row g-3">
                 <div class="col-lg-4">
@@ -619,6 +689,7 @@
                         <input type="hidden" id="editIntentId">
                         <label class="small fw-bold">Название интента</label>
                         <input id="intentName" class="form-control mb-2" placeholder="Например: Вопрос об оплате">
+<!-- Поле примеров фраз интента -->
                         <label class="small fw-bold">Примеры фраз</label>
                         <textarea id="intentExamples" class="form-control mb-2" rows="5" placeholder="Например: как оплатить, хочу оплатить"></textarea>
                         <div class="small text-muted mb-2">Пишите через запятую или с новой строки</div>
@@ -641,6 +712,7 @@
         <button class="btn btn-sm btn-outline-primary" onclick="trainBot()">Обучить</button>
     </div>
                         </div>
+<!-- Таблица интентов -->
                         <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead><tr><th>Название</th><th>Примеры</th><th>Ответ</th><th></th></tr></thead>
@@ -652,6 +724,7 @@
             </div>
         </section>
 
+<!-- Раздел редактора сценариев -->
         <section id="section-scenarios" class="section">
             <div class="flow-shell">
                 <div class="flow-topbar card p-3 mb-3">
@@ -676,6 +749,7 @@
 
                 <div class="row g-3 flow-editor-row">
                     <div class="col-xl-8">
+<!-- Рабочее поле схемы сценария -->
                         <div class="flow-workspace card">
                             <div class="flow-toolbar">
                                 <div class="small text-muted">
@@ -687,6 +761,7 @@
                                 <svg id="flowEdgesSvg" class="flow-edges-svg"></svg>
                                 <div id="flowBlocksLayer" class="flow-blocks-layer"></div>
                                 <div id="flowEmptyHint" class="flow-empty-hint">
+<!-- Подсказка для пустого сценария -->
                                     <div class="fw-bold mb-1">Пока нет блоков</div>
                                     <div>Нажмите “Начало”, чтобы создать первый блок сценария.</div>
                                 </div>
@@ -701,6 +776,7 @@
                                 <button id="deleteFlowNodeBtn" class="btn btn-sm btn-light text-danger" style="display:none;" onclick="deleteScenarioNode(val('scenarioNodeId'))"><i class="bi bi-trash"></i></button>
                             </div>
                             <div id="flowNoSelection" class="text-muted small">Выберите блок</div>
+<!-- Форма свойств выбранного блока -->
                             <div id="flowProperties" style="display:none;">
                                 <input type="hidden" id="scenarioNodeId">
                                 <label class="small fw-bold">Название блока</label>
@@ -726,6 +802,7 @@
                             </div>
                         </div>
 
+<!-- Форма настройки переходов -->
                         <div class="card p-3">
                             <h5 class="fw-bold">Кнопки и стрелки</h5>
                             <input type="hidden" id="scenarioEdgeId">
@@ -747,6 +824,7 @@
                             <div id="scenarioUserPreview" class="small text-muted">Выберите блок, чтобы увидеть, как его увидит пользователь.</div>
                         </div>
 
+<!-- Проверка корректности сценария -->
                         <div class="card p-3">
                             <h5 class="fw-bold">Проверка сценария</h5>
                             <div id="flowValidationBox" class="small text-muted">Нажмите “Проверить”, чтобы увидеть ошибки.</div>
@@ -756,6 +834,7 @@
             </div>
         </section>
 
+<!-- Раздел диалогов -->
         <section id="section-dialogs" class="section">
             <div class="row g-3">
                 <div class="col-lg-5"><div class="card p-3"><h5 class="fw-bold">Последние диалоги</h5><div id="logsContainer"></div></div></div>
@@ -771,6 +850,7 @@
             </div>
         </section>
 
+<!-- Раздел операторов -->
         <section id="section-operators" class="section">
             <div class="row g-3">
                 <div class="col-lg-5">
@@ -779,6 +859,7 @@
                         <input type="hidden" id="editOperatorId">
                         <input id="opUsername" class="form-control mb-2" placeholder="Логин">
                         <input id="opEmail" class="form-control mb-2" placeholder="Email">
+<!-- Поле пароля оператора -->
                         <input id="opPassword" type="password" class="form-control mb-2" placeholder="Пароль">
                         <div id="operatorPasswordHint" class="small text-muted mb-2">Оператор будет привязан к активному боту</div>
                         <div class="d-flex gap-2">
@@ -791,6 +872,7 @@
             </div>
         </section>
 
+<!-- Раздел редактируемых сообщений -->
         <section id="section-settings" class="section">
             <div class="card p-3">
                 <h5 class="fw-bold">Редактируемые сообщения</h5>
@@ -809,6 +891,7 @@
 </div>
 
 <script>
+// Глобальные переменные интерфейса
 let authMode = 'login';
 let token = localStorage.getItem('access_token');
 let currentUser = JSON.parse(localStorage.getItem('current_user') || 'null');
@@ -824,7 +907,9 @@ let flowDragging = null;
 let flowValidationErrors = [];
 let flowDirty = false;
 
+// Формирование заголовков авторизации
 function authHeaders(extra={}) { return { ...extra, 'Authorization': 'Bearer ' + token }; }
+// Показ всплывающего уведомления
 function showNotice(text, type='danger') {
     const box = document.getElementById('noticeBox');
     if (!box) return alert(text);
@@ -833,7 +918,9 @@ function showNotice(text, type='danger') {
     box.style.display = 'block';
     clearTimeout(window.noticeTimer);
     window.noticeTimer = setTimeout(() => box.style.display = 'none', 4500);
+
 }
+// Выполнение запроса к серверу
 async function apiFetch(url, options={}) {
     const resp = await fetch(url, options);
     let data = {};
@@ -842,9 +929,11 @@ async function apiFetch(url, options={}) {
         const msg = data.detail || data.message || `Ошибка запроса: ${resp.status}`;
         throw new Error(msg);
     }
+// Обработка ошибки серверного ответа
     if (data.status === 'error') throw new Error(data.message || 'Операция не выполнена');
     return data;
 }
+// Безопасный запуск операции
 async function runSafe(action, successText='') {
     try {
         const result = await action();
@@ -853,17 +942,27 @@ async function runSafe(action, successText='') {
     } catch (e) {
         showNotice(e.message || 'Произошла ошибка');
         return null;
+    // Ошибка уже показана пользователю
     }
 }
+// Получение активного бота
 function activeBot() { return bots.find(b => String(b.id) === String(activeBotId)); }
+// Проверка роли администратора
 function isAdmin() { return currentUser && currentUser.role === 'admin'; }
+// Чтение значения поля
 function val(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+// Запись значения в поле
 function setVal(id, value) { const el = document.getElementById(id); if(el) el.value = value ?? ''; }
+// Экранирование разметки страницы
 function escapeHtml(s) { return String(s ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
+// Экранирование значения атрибута
 function escapeAttr(s) { return escapeHtml(s).replace(/`/g, '&#96;'); }
+// Проверка выбранного флажка
 function checked(id) { const el = document.getElementById(id); return !!(el && el.checked); }
+// Установка состояния флажка
 function setChecked(id, v) { const el = document.getElementById(id); if(el) el.checked = !!v; }
 
+// Переключение формы авторизации
 function switchAuth(mode) {
     authMode = mode;
     document.getElementById('loginTab').classList.toggle('active', mode === 'login');
@@ -871,8 +970,10 @@ function switchAuth(mode) {
     document.getElementById('authEmail').style.display = mode === 'reg' ? 'block' : 'none';
     document.getElementById('authBtn').innerText = mode === 'login' ? 'Войти' : 'Создать администратора';
 }
+// Вывод ошибки авторизации
 function showAuthError(text) { const el = document.getElementById('authError'); el.innerText = text; el.style.display = 'block'; }
 
+// Обработка входа или регистрации
 async function handleAuth() {
     const username = val('authUsername');
     const email = val('authEmail');
@@ -881,6 +982,7 @@ async function handleAuth() {
     const endpoint = authMode === 'login' ? '/login' : '/register';
     const body = authMode === 'login' ? {username, password} : {username, email, password};
     try {
+// Отправка данных авторизации
         const data = await apiFetch(endpoint, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
         if (authMode === 'reg') { showNotice('Администратор создан. Теперь войдите.', 'success'); switchAuth('login'); return; }
         localStorage.setItem('access_token', data.access_token);
@@ -890,11 +992,14 @@ async function handleAuth() {
         showAuthError(e.message || 'Ошибка авторизации');
     }
 }
+// Очистка сессии пользователя
 function logout() { localStorage.clear(); location.reload(); }
 
+// Словарь названий разделов
 function sectionTitles() {
     return {dashboard:'Статистика', bots:'Боты', knowledge:'База знаний', intents:'Интенты', scenarios:'Редактор сценариев', dialogs:'Диалоги', operators:'Операторы', settings:'Редактируемые сообщения'};
 }
+// Переключение активного раздела
 function showSection(name, el) {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
     document.getElementById('section-' + name).classList.add('active');
@@ -903,12 +1008,15 @@ function showSection(name, el) {
     document.getElementById('pageTitle').innerText = sectionTitles()[name];
     if (name === 'operators') loadOperators();
     if (name === 'intents') loadIntents();
+    // Загрузка данных выбранного раздела
     if (name === 'knowledge') loadIntents();
     if (name === 'settings') fillSettingsForm();
     if (name === 'scenarios') loadScenarios();
 }
+// Открытие раздела по названию
 function showSectionByName(name) { const link = [...document.querySelectorAll('.sidebar .nav-link')].find(a => a.textContent.toLowerCase().includes(sectionTitles()[name].toLowerCase())); showSection(name, link); }
 
+// Запуск интерфейса после входа
 async function initApp() {
     if (!token || !currentUser) return;
     document.getElementById('authScreen').style.display = 'none';
@@ -917,8 +1025,10 @@ async function initApp() {
     document.getElementById('userRoleDisplay').innerText = currentUser.role === 'admin' ? 'Администратор' : 'Оператор';
     document.querySelectorAll('.admin-only').forEach(el => el.classList.toggle('hidden', !isAdmin()));
     await loadBots();
+    // Начальная загрузка завершена
 }
 
+// Загрузка списка ботов
 async function loadBots() {
     const data = await runSafe(() => apiFetch('/bots', {headers: authHeaders()}));
     if (!data) return;
@@ -928,6 +1038,7 @@ async function loadBots() {
     localStorage.setItem('active_bot_id', activeBotId || '');
     renderBotSelect(); renderBotsList(); await refreshAll();
 }
+// Отрисовка выпадающего списка ботов
 function renderBotSelect() {
     const sel = document.getElementById('activeBotSelect');
     if (!bots || bots.length === 0) { sel.innerHTML = ''; document.getElementById('connectHint').style.display = 'block'; document.getElementById('botSubtitle').innerText = 'Бот не выбран'; return; }
@@ -936,26 +1047,88 @@ function renderBotSelect() {
     const bot = activeBot();
     document.getElementById('botSubtitle').innerText = bot ? `ВК-бот · callback: /vk/${bot.id}` : 'Бот не выбран';
     document.getElementById('callbackStat').innerText = bot ? `/vk/${bot.id}` : '—';
+
 }
+// Смена активного бота
 async function changeBot() { activeBotId = document.getElementById('activeBotSelect').value; localStorage.setItem('active_bot_id', activeBotId); selectedDialogUserId = null; await refreshAll(); }
+// Обновление данных интерфейса
 async function refreshAll() { if (!activeBotId) return; await Promise.all([loadCategories(), loadIntents(), loadRules(), loadScenarios(), loadLogs(), loadAnalytics()]); }
 
-async function createBot() {
+// Создание или обновление бота
+async function saveBot() {
     await runSafe(async () => {
-        const body = {name: val('botName'), token: val('botToken'), group_link: val('botGroupLink'), group_id: val('botGroupId'), confirmation_string: val('botConfirm')};
+        const id = val('editBotId');
+        const body = {
+            name: val('botName'),
+            token: val('botToken'),
+            group_link: val('botGroupLink'),
+            group_id: val('botGroupId'),
+            confirmation_string: val('botConfirm')
+        };
         if(!body.name || !body.token) throw new Error('Введите название и токен бота');
-        const data = await apiFetch('/bots', {method:'POST', headers:authHeaders({'Content-Type':'application/json'}), body:JSON.stringify(body)});
-        activeBotId = data.bot_id; await loadBots();
-    }, 'Бот создан');
+        const url = id ? `/bots/${id}` : '/bots';
+        const method = id ? 'PUT' : 'POST';
+        const data = await apiFetch(url, {method, headers:authHeaders({'Content-Type':'application/json'}), body:JSON.stringify(body)});
+        if(!id) activeBotId = data.bot_id;
+        if(id) activeBotId = id;
+        resetBotForm();
+        await loadBots();
+    }, val('editBotId') ? 'Бот обновлен' : 'Бот создан');
 }
+// Создание бота через общую форму
+async function createBot() { await saveBot(); }
+// Заполнение формы данными бота
+function editBot(id) {
+    const b = bots.find(x => String(x.id) === String(id));
+    if(!b) return;
+    setVal('editBotId', b.id);
+    setVal('botName', b.name || '');
+    setVal('botToken', b.token || '');
+    setVal('botGroupLink', b.group_link || '');
+    setVal('botGroupId', b.group_id || '');
+    setVal('botConfirm', b.confirmation_string || '');
+    document.getElementById('botFormTitle').innerText = 'Редактирование бота';
+    document.getElementById('botSubmitBtn').innerText = 'Сохранить';
+    document.getElementById('cancelBotEditBtn').style.display = 'block';
+}
+// Сброс формы бота
+function resetBotForm() {
+    setVal('editBotId','');
+    setVal('botName','');
+    setVal('botToken','');
+    setVal('botGroupLink','');
+    setVal('botGroupId','');
+    setVal('botConfirm','');
+    document.getElementById('botFormTitle').innerText = 'Добавить бота';
+    document.getElementById('botSubmitBtn').innerText = 'Создать бота';
+    document.getElementById('cancelBotEditBtn').style.display = 'none';
+}
+// Удаление выбранного бота
+async function deleteBot(id) {
+    const b = bots.find(x => String(x.id) === String(id));
+    if(!b) return;
+    if(!confirm(`Удалить бота «${b.name || 'Без названия'}»? Все связанные данные будут удалены.`)) return;
+    await runSafe(async () => {
+        await apiFetch(`/bots/${id}`, {method:'DELETE', headers:authHeaders()});
+        if(String(activeBotId) === String(id)) activeBotId = '';
+        selectedDialogUserId = null;
+        resetBotForm();
+        await loadBots();
+    }, 'Бот удален');
+}
+// Отрисовка карточек ботов
 function renderBotsList() {
     const box = document.getElementById('botsList');
     if (!bots || bots.length === 0) { box.innerHTML = '<div class="text-muted">Пока нет ботов.</div>'; return; }
-    box.innerHTML = bots.map(b => `<div class="border rounded-4 p-3 mb-2 bg-light ${String(activeBotId) === String(b.id) ? 'border-primary' : ''}"><div class="d-flex justify-content-between align-items-start gap-2"><div><b>${escapeHtml(b.name || 'Без названия')}</b><div class="small text-muted">${escapeHtml(b.group_link || 'Ссылка не указана')}</div><div class="small mt-1"><b>Callback VK:</b> /vk/${b.id}</div></div><button class="btn btn-sm btn-outline-primary" onclick="selectBotFromList(${b.id})">Выбрать</button></div></div>`).join('');
+    box.innerHTML = bots.map(b => `<div class="border rounded-4 p-3 mb-2 bg-light ${String(activeBotId) === String(b.id) ? 'border-primary' : ''}"><div class="d-flex justify-content-between align-items-start gap-2"><div><b>${escapeHtml(b.name || 'Без названия')}</b><div class="small text-muted">${escapeHtml(b.group_link || 'Ссылка не указана')}</div><div class="small mt-1"><b>Callback VK:</b> /vk/${b.id}</div></div><div class="text-nowrap"><button class="btn btn-sm btn-outline-primary me-1" onclick="selectBotFromList(${b.id})">Выбрать</button><button class="btn btn-sm btn-light me-1 admin-only" onclick="editBot(${b.id})"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-light text-danger admin-only" onclick="deleteBot(${b.id})"><i class="bi bi-trash"></i></button></div></div></div>`).join('');
+    document.querySelectorAll('.admin-only').forEach(el => el.classList.toggle('hidden', !isAdmin()));
 }
+// Выбор бота из карточки
 async function selectBotFromList(botId) { activeBotId = botId; localStorage.setItem('active_bot_id', activeBotId); selectedDialogUserId = null; renderBotSelect(); renderBotsList(); await refreshAll(); }
+// Форматирование даты для интерфейса
 function formatDateTime(value) { if (!value) return ''; const d = new Date(value); if (isNaN(d.getTime())) return value; return d.toLocaleString('ru-RU', {day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit'}); }
 
+// Загрузка списка категорий
 async function loadCategories() {
     if(!activeBotId) return;
     const data = await runSafe(() => apiFetch(`/categories?bot_id=${activeBotId}`, {headers: authHeaders()}));
@@ -964,6 +1137,7 @@ async function loadCategories() {
     currentCategories = cats;
     const options = cats.map(c => `<option value="${escapeAttr(c.name)}">${escapeHtml(c.name)}</option>`).join('');
     document.getElementById('categorySelect').innerHTML = options || '<option value="Общее">Общее</option>';
+    // Обновление фильтра категорий
     const filter = document.getElementById('categoryFilter');
     if (filter) {
         const old = filter.value;
@@ -972,7 +1146,9 @@ async function loadCategories() {
     }
     document.getElementById('categoriesContainer').innerHTML = cats.map(c => `<div class="border-bottom py-2"><div class="d-flex justify-content-between"><b>${escapeHtml(c.name)}</b><span><button class="btn btn-sm btn-light admin-only" onclick="editCategory('${escapeAttr(c.name)}','${escapeAttr(c.description || '')}')"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-light text-danger admin-only" onclick="deleteCategory('${escapeAttr(c.name)}')"><i class="bi bi-trash"></i></button></span></div><div class="small text-muted">${escapeHtml(c.description || '')}</div></div>`).join('');
     document.querySelectorAll('.admin-only').forEach(el => el.classList.toggle('hidden', !isAdmin()));
+
 }
+// Сохранение категории базы знаний
 async function saveCategory() {
     await runSafe(async () => {
         const body = {bot_id:Number(activeBotId), name:val('catName'), description:val('catDesc'), old_name:val('editCatOldName') || null};
@@ -981,14 +1157,19 @@ async function saveCategory() {
         setVal('catName',''); setVal('catDesc',''); setVal('editCatOldName','');
         await loadCategories(); await loadRules();
     }, 'Категория сохранена');
+
 }
+// Заполнение формы категории
 function editCategory(name, desc) { setVal('editCatOldName', name); setVal('catName', name); setVal('catDesc', desc || ''); }
+// Удаление категории базы знаний
 async function deleteCategory(name) {
     if(!confirm('Удалить категорию? Ответы из нее будут перенесены в «Общее».')) return;
     await runSafe(async () => { await apiFetch(`/categories/${encodeURIComponent(name)}?bot_id=${activeBotId}`, {method:'DELETE', headers:authHeaders()}); await loadCategories(); await loadRules(); }, 'Категория удалена');
 }
+// Сброс фильтров базы знаний
 function resetRuleFilters() { setVal('searchInp',''); const f = document.getElementById('categoryFilter'); if(f) f.value=''; loadRules(); }
 
+// Загрузка ответов базы знаний
 async function loadRules() {
     if(!activeBotId) return;
     const search = encodeURIComponent(val('searchInp'));
@@ -997,9 +1178,11 @@ async function loadRules() {
     if (!data) return;
     window.currentRules = data.rules || [];
     document.getElementById('rulesTable').innerHTML = (data.rules || []).map(r => `<tr><td><b>${escapeHtml(r.keyword)}</b></td><td><span class="badge bg-light text-primary border">${escapeHtml(r.category)}</span></td><td>${r.intent_name ? `<span class="badge bg-light text-success border">${escapeHtml(r.intent_name)}</span>` : '<span class="text-muted">—</span>'}</td><td class="text-truncate" style="max-width:320px;">${escapeHtml(r.answer)}</td><td class="text-end admin-only"><button class="btn btn-sm btn-light" onclick="editRule(${r.id})"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-light text-danger" onclick="deleteRule(${r.id})"><i class="bi bi-trash"></i></button></td></tr>`).join('') || '<tr><td colspan="5" class="text-muted">Ответов пока нет.</td></tr>';
+    // Применение прав администратора к таблице
     document.querySelectorAll('.admin-only').forEach(el => el.classList.toggle('hidden', !isAdmin()));
 }
 
+// Сохранение ответа базы знаний
 async function saveRule() {
     await runSafe(async () => {
         const id = val('editRuleId');
@@ -1008,22 +1191,27 @@ async function saveRule() {
         if (!body.keyword || !body.answer) throw new Error('Заполните фразы пользователя и ответ бота');
         const url = id ? `/rules/${id}` : '/rules'; const method = id ? 'PUT' : 'POST';
         await apiFetch(url, {method, headers:authHeaders({'Content-Type':'application/json'}), body:JSON.stringify(body)});
+
         resetRuleForm(); await loadRules(); await loadAnalytics();
     }, 'Ответ сохранен');
 }
 
+// Заполнение формы ответа
 function editRule(id) {
     const r = (window.currentRules || []).find(x => x.id === id);
     if(!r) return;
     setVal('editRuleId', r.id); setVal('keyword', r.keyword); setVal('answer', r.answer); setVal('categorySelect', r.category); setVal('ruleIntentSelect', r.intent_id || '');
     document.getElementById('ruleFormTitle').innerText='Редактирование ответа'; document.getElementById('cancelEditBtn').style.display='block';
 }
+// Сброс формы ответа
 function resetRuleForm() { setVal('editRuleId',''); setVal('keyword',''); setVal('answer',''); setVal('ruleIntentSelect',''); document.getElementById('ruleFormTitle').innerText='Новый ответ'; document.getElementById('cancelEditBtn').style.display='none'; }
+// Удаление ответа базы знаний
 async function deleteRule(id) {
     if(!confirm('Удалить ответ из базы знаний?')) return;
     await runSafe(async () => { await apiFetch(`/rules/${id}?bot_id=${activeBotId}`, {method:'DELETE', headers:authHeaders()}); await loadRules(); await loadAnalytics(); }, 'Ответ удален');
 }
 
+// Загрузка интентов
 async function loadIntents() {
     if(!activeBotId || !isAdmin()) return;
     const data = await runSafe(() => apiFetch(`/intents?bot_id=${activeBotId}`, {headers: authHeaders()}));
@@ -1032,6 +1220,7 @@ async function loadIntents() {
     const ruleSelect = document.getElementById('ruleIntentSelect');
     if(ruleSelect) {
         const old = ruleSelect.value;
+
         ruleSelect.innerHTML = '<option value="">Не привязывать</option>' + window.currentIntents.map(i => `<option value="${i.id}">${escapeHtml(i.name)}</option>`).join('');
         ruleSelect.value = old;
     }
@@ -1040,6 +1229,7 @@ async function loadIntents() {
          table.innerHTML = window.currentIntents.map(i => `<tr><td><b>${escapeHtml(i.name)}</b></td><td class="text-truncate" style="max-width:260px;">${escapeHtml(i.examples || '')}</td><td class="text-truncate" style="max-width:260px;">${escapeHtml(i.response || '')}</td><td class="text-end"><button class="btn btn-sm btn-light" onclick="editIntent(${i.id})"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-light text-danger" onclick="deleteIntent(${i.id})"><i class="bi bi-trash"></i></button></td></tr>`).join('') || '<tr><td colspan="4" class="text-muted">Интентов пока нет.</td></tr>';
     }
 }
+// Сохранение интента
 async function saveIntent() {
     await runSafe(async () => {
         const id = val('editIntentId');
@@ -1048,6 +1238,7 @@ async function saveIntent() {
         if(!body.examples) throw new Error('Введите хотя бы один пример фразы');
         const url = id ? `/intents/${id}` : '/intents';
         const method = id ? 'PUT' : 'POST';
+        // Отправка интента на сервер
         await apiFetch(url, {method, headers:authHeaders({'Content-Type':'application/json'}), body:JSON.stringify(body)});
         resetIntentForm();
         await loadIntents();
@@ -1055,6 +1246,7 @@ async function saveIntent() {
         await loadAnalytics();
     }, 'Интент сохранен');
 }
+// Заполнение формы интента
 function editIntent(id) {
     const item = (window.currentIntents || []).find(x => String(x.id) === String(id));
     if(!item) return;
@@ -1063,8 +1255,10 @@ function editIntent(id) {
     setVal('intentExamples', item.examples || '');
     setVal('intentResponse', item.response || '');
     document.getElementById('intentFormTitle').innerText = 'Редактирование интента';
+
     document.getElementById('cancelIntentEditBtn').style.display = 'block';
 }
+// Сброс формы интента
 function resetIntentForm() {
     setVal('editIntentId','');
     setVal('intentName','');
@@ -1073,6 +1267,7 @@ function resetIntentForm() {
     const title = document.getElementById('intentFormTitle'); if(title) title.innerText = 'Новый интент';
     const cancel = document.getElementById('cancelIntentEditBtn'); if(cancel) cancel.style.display = 'none';
 }
+// Удаление интента
 async function deleteIntent(id) {
     if(!confirm('Удалить интент? У ответов базы знаний, которые были к нему привязаны, связь будет снята.')) return;
     await runSafe(async () => {
@@ -1081,11 +1276,14 @@ async function deleteIntent(id) {
         await loadIntents();
         await loadRules();
         await loadAnalytics();
+    // Обновление данных после удаления интента
     }, 'Интент удален');
 }
 
+// Обучение бота по базе знаний
 async function trainBot() { if(!activeBotId) return showNotice('Сначала выберите бота'); await runSafe(async () => { const data = await apiFetch('/train', {method:'POST', headers:authHeaders({'Content-Type':'application/json'}), body:JSON.stringify({bot_id:Number(activeBotId)})}); await refreshAll(); showNotice(`NLP-индекс обновлен. Ответов: ${data.rules_trained || 0}, интентов: ${data.intents_trained || 0}. Движок: ${data.engine || ''}`, 'success'); }); }
 
+// Загрузка показателей статистики
 async function loadAnalytics() {
     if(!activeBotId) return;
     const data = await runSafe(() => apiFetch(`/analytics?bot_id=${activeBotId}`, {headers: authHeaders()}));
@@ -1101,6 +1299,7 @@ async function loadAnalytics() {
     document.getElementById('messagesByDay').innerHTML = (data.by_day || []).length ? data.by_day.map(p => `<div class="d-flex justify-content-between border-bottom py-2"><span>${escapeHtml(p.day)}</span><b>${p.messages}</b></div>`).join('') : 'Нет данных';
 }
 
+// Загрузка блоков и переходов сценария
 async function loadScenarios() {
     if(!activeBotId || !isAdmin()) return;
     const nodesData = await runSafe(() => apiFetch(`/scenarios/nodes?bot_id=${activeBotId}`, {headers: authHeaders()}));
@@ -1123,33 +1322,42 @@ async function loadScenarios() {
     validateFlow(false);
 }
 
+// Получение названия типа блока
 function nodeTypeLabel(type) {
     return {message:'Сообщение', question:'Вопрос', operator:'Оператор', end:'Конец'}[type] || type;
 }
 
+// Поиск исходящих переходов блока
 function scenarioNodeOutgoing(id) { return scenarioEdges.filter(e => String(e.from_node_id) === String(id)); }
+// Поиск входящих переходов блока
 function scenarioNodeIncoming(id) { return scenarioEdges.filter(e => String(e.to_node_id) === String(id)); }
+// Сокращение текста блока
 function scenarioShortText(text, limit=92) {
     const value = String(text || '').replace(/\s+/g, ' ').trim();
     return value.length > limit ? value.slice(0, limit - 1) + '…' : value;
 }
+// Получение выбранного блока сценария
 function currentScenarioNode() {
     return scenarioNodes.find(n => String(n.id) === String(selectedScenarioNodeId));
 }
+// Поиск блока сценария по идентификатору
 function getScenarioNode(id) {
     return scenarioNodes.find(n => String(n.id) === String(id));
 }
+// Отметка несохраненных изменений
 function markFlowDirty() {
     flowDirty = true;
     const btn = document.getElementById('saveFlowNodeBtn');
     if(btn) btn.classList.add('btn-warning');
 }
+// Снятие отметки изменений
 function clearFlowDirty() {
     flowDirty = false;
     const btn = document.getElementById('saveFlowNodeBtn');
     if(btn) btn.classList.remove('btn-warning');
 }
 
+// Отрисовка редактора сценариев
 function renderFlowEditor() {
     renderFlowBlocks();
     renderFlowEdges();
@@ -1159,6 +1367,7 @@ function renderFlowEditor() {
     if(empty) empty.style.display = scenarioNodes.length ? 'none' : 'block';
 }
 
+// Отрисовка блоков сценария
 function renderFlowBlocks() {
     const layer = document.getElementById('flowBlocksLayer');
     if(!layer) return;
@@ -1192,6 +1401,7 @@ function renderFlowBlocks() {
     }).join('');
 }
 
+// Отрисовка стрелок сценария
 function renderFlowEdges() {
     const svg = document.getElementById('flowEdgesSvg');
     if(!svg) return;
@@ -1205,6 +1415,7 @@ function renderFlowEdges() {
         const from = getScenarioNode(e.from_node_id);
         const to = getScenarioNode(e.to_node_id);
         if(!from || !to) continue;
+        // Расчет координат стрелки
         const x1 = Number(from.position_x || 80) + 245;
         const y1 = Number(from.position_y || 80) + 64;
         const x2 = Number(to.position_x || 80);
@@ -1221,6 +1432,7 @@ function renderFlowEdges() {
     }
 }
 
+// Выбор блока на схеме
 function flowBlockClick(event, id) {
     event.stopPropagation();
     if(flowDragging && flowDragging.moved) return;
@@ -1229,7 +1441,9 @@ function flowBlockClick(event, id) {
         return;
     }
     selectScenarioNode(id);
+    // Завершение выбора блока
 }
+// Снятие режима соединения при клике по полю
 function flowCanvasClick(event) {
     if(event.target && event.target.closest && event.target.closest('.flow-block')) return;
     if(flowConnectSourceId) {
@@ -1238,7 +1452,9 @@ function flowCanvasClick(event) {
         renderFlowEditor();
         return;
     }
+
 }
+// Начало перетаскивания блока
 function flowBlockMouseDown(event, id) {
     if(event.button !== 0) return;
     if(event.target.closest('button, input, textarea, select')) return;
@@ -1255,9 +1471,11 @@ function flowBlockMouseDown(event, id) {
         origY:Number(node.position_y || 80),
         moved:false
     };
+    // Подключение обработчиков перетаскивания
     document.addEventListener('mousemove', flowMouseMove);
     document.addEventListener('mouseup', flowMouseUp);
 }
+// Перемещение блока при перетаскивании
 function flowMouseMove(event) {
     if(!flowDragging) return;
     const node = getScenarioNode(flowDragging.id);
@@ -1274,6 +1492,7 @@ function flowMouseMove(event) {
     }
     renderFlowEdges();
 }
+// Завершение перетаскивания блока
 async function flowMouseUp() {
     if(!flowDragging) return;
     document.removeEventListener('mousemove', flowMouseMove);
@@ -1282,8 +1501,10 @@ async function flowMouseUp() {
     const node = getScenarioNode(flowDragging.id);
     flowDragging = null;
     if(node && moved) await saveFlowNodePosition(node);
+    // Очистка данных перетаскивания
     setTimeout(() => { if(flowDragging) flowDragging.moved = false; }, 0);
 }
+// Сохранение координат блока
 async function saveFlowNodePosition(node) {
     await runSafe(async () => {
         const body = {
@@ -1292,6 +1513,7 @@ async function saveFlowNodePosition(node) {
             node_type:node.node_type,
             message:node.message || '',
             is_start:!!node.is_start,
+            // Округление позиции блока
             position_x:Math.round(Number(node.position_x || 80)),
             position_y:Math.round(Number(node.position_y || 80))
         };
@@ -1299,6 +1521,7 @@ async function saveFlowNodePosition(node) {
     });
 }
 
+// Выбор блока сценария
 function selectScenarioNode(id) {
     const n = getScenarioNode(id);
     if(!n) return;
@@ -1316,6 +1539,7 @@ function selectScenarioNode(id) {
     renderScenarioEdges();
     renderScenarioPreview();
 }
+// Отрисовка панели свойств блока
 function renderFlowProperties() {
     const selected = currentScenarioNode();
     const noSel = document.getElementById('flowNoSelection');
@@ -1334,6 +1558,7 @@ function renderFlowProperties() {
     const hint = document.getElementById('selectedScenarioHint');
     if(hint) hint.innerText = `Стрелки, которые выходят из блока “${selected.title}”`;
 }
+// Очистка формы блока
 function resetScenarioNodeForm() {
     selectedScenarioNodeId = null;
     flowConnectSourceId = null;
@@ -1349,12 +1574,14 @@ function resetScenarioNodeForm() {
     renderScenarioPreview();
 }
 
+// Текст блока по умолчанию
 function getDefaultNodeText(type) {
     if(type === 'operator') return 'Передаю диалог оператору. Он скоро ответит вам здесь.';
     if(type === 'end') return 'Спасибо за обращение! Если появятся вопросы, напишите снова.';
     if(type === 'question') return 'Выберите подходящий вариант:';
     return 'Напишите текст сообщения для пользователя.';
 }
+// Заголовок блока по умолчанию
 function getDefaultNodeTitle(type, isStart=false) {
     if(isStart) return 'Новый сценарий';
     if(type === 'operator') return 'Оператор';
@@ -1362,6 +1589,7 @@ function getDefaultNodeTitle(type, isStart=false) {
     if(type === 'question') return 'Вопрос';
     return 'Сообщение';
 }
+// Создание нового блока сценария
 async function createFlowNode(type='message', isStart=false) {
     if(!activeBotId) return showNotice('Сначала выберите бота');
     await runSafe(async () => {
@@ -1370,6 +1598,7 @@ async function createFlowNode(type='message', isStart=false) {
         const body = {
             bot_id:Number(activeBotId),
             title:getDefaultNodeTitle(type, isStart),
+            // Тип создаваемого блока
             node_type:type,
             message:getDefaultNodeText(type),
             is_start:!!isStart,
@@ -1378,11 +1607,13 @@ async function createFlowNode(type='message', isStart=false) {
         };
         const data = await apiFetch('/scenarios/nodes', {method:'POST', headers:authHeaders({'Content-Type':'application/json'}), body:JSON.stringify(body)});
         selectedScenarioNodeId = data.node_id;
+        // Перезагрузка сценария после создания
         await loadScenarios();
         if(selectedScenarioNodeId) selectScenarioNode(selectedScenarioNodeId);
     }, 'Блок создан');
 }
 
+// Сохранение блока сценария
 async function saveScenarioNode() {
     await runSafe(async () => {
         const id = val('scenarioNodeId');
@@ -1391,6 +1622,7 @@ async function saveScenarioNode() {
         const body = {
             bot_id:Number(activeBotId),
             title:val('scenarioTitle'),
+            // Тип сохраняемого блока
             node_type:val('scenarioType'),
             message:val('scenarioMessage'),
             is_start:checked('scenarioIsStart'),
@@ -1399,6 +1631,7 @@ async function saveScenarioNode() {
         };
         if(!body.title) throw new Error('Введите название блока');
         if(!body.message && body.node_type !== 'operator' && body.node_type !== 'end') throw new Error('Введите текст сообщения');
+        // Отправка изменений блока на сервер
         await apiFetch(`/scenarios/nodes/${id}`, {method:'PUT', headers:authHeaders({'Content-Type':'application/json'}), body:JSON.stringify(body)});
         clearFlowDirty();
         await loadScenarios();
@@ -1406,6 +1639,7 @@ async function saveScenarioNode() {
     }, 'Блок сохранен');
 }
 
+// Удаление блока сценария
 async function deleteScenarioNode(id) {
     if(!id) return;
     const node = getScenarioNode(id);
@@ -1414,9 +1648,11 @@ async function deleteScenarioNode(id) {
         await apiFetch(`/scenarios/nodes/${id}?bot_id=${activeBotId}`, {method:'DELETE', headers:authHeaders()});
         resetScenarioNodeForm();
         await loadScenarios();
+    // Обновление списка блоков после удаления
     }, 'Блок удален');
 }
 
+// Заполнение списка блоков назначения
 function renderScenarioEdgeOptions() {
     const select = document.getElementById('edgeToNode');
     if(!select) return;
@@ -1425,6 +1661,7 @@ function renderScenarioEdgeOptions() {
         .filter(n => String(n.id) !== current)
         .map(n => `<option value="${n.id}">${escapeHtml(n.title)}${n.is_start ? ' · старт' : ''}</option>`).join('');
 }
+// Начало соединения блоков
 function beginConnect(id) {
     flowConnectSourceId = id;
     selectedScenarioNodeId = id;
@@ -1433,10 +1670,12 @@ function beginConnect(id) {
     updateFlowModeHint();
     renderFlowBlocks();
 }
+// Создание перехода из выбранного блока
 function beginConnectFromSelected() {
     if(!selectedScenarioNodeId) return showNotice('Сначала выберите блок');
     beginConnect(selectedScenarioNodeId);
 }
+// Обновление подсказки режима соединения
 function updateFlowModeHint() {
     const box = document.getElementById('flowModeHint');
     if(!box) return;
@@ -1445,8 +1684,10 @@ function updateFlowModeHint() {
         box.innerHTML = `<span class="badge bg-warning text-dark">Соединение</span> выберите блок, куда должна вести стрелка из “${escapeHtml(source ? source.title : '')}”`;
     } else {
         box.innerHTML = '';
+    // Очистка подсказки режима соединения
     }
 }
+// Завершение соединения блоков
 async function completeConnect(targetId) {
     const sourceId = flowConnectSourceId;
     if(!sourceId || String(sourceId) === String(targetId)) {
@@ -1455,6 +1696,7 @@ async function completeConnect(targetId) {
         return;
     }
     const source = getScenarioNode(sourceId);
+    // Получение блока назначения
     const target = getScenarioNode(targetId);
     const label = prompt(`Текст кнопки/перехода из “${source?.title || 'блок'}” в “${target?.title || 'блок'}”:`, target?.title || 'Далее');
     if(!label || !label.trim()) {
@@ -1463,6 +1705,7 @@ async function completeConnect(targetId) {
         return;
     }
     await runSafe(async () => {
+        // Формирование данных перехода
         const body = {bot_id:Number(activeBotId), from_node_id:Number(sourceId), to_node_id:Number(targetId), label:label.trim(), condition_text:'', sort_order:scenarioNodeOutgoing(sourceId).length};
         await apiFetch('/scenarios/edges', {method:'POST', headers:authHeaders({'Content-Type':'application/json'}), body:JSON.stringify(body)});
         flowConnectSourceId = null;
@@ -1472,6 +1715,7 @@ async function completeConnect(targetId) {
     }, 'Стрелка добавлена');
 }
 
+// Отрисовка списка переходов
 function renderScenarioEdges() {
     const box = document.getElementById('scenarioEdgesList');
     if(!box) return;
@@ -1480,6 +1724,7 @@ function renderScenarioEdges() {
         box.innerHTML = '<div class="text-muted">Сначала выберите блок</div>';
         return;
     }
+    // Формирование разметки переходов
     const edges = scenarioNodeOutgoing(selected.id);
     box.innerHTML = edges.map(e => `
         <div class="flow-edge-row">
@@ -1496,6 +1741,7 @@ function renderScenarioEdges() {
             </div>
         </div>`).join('') || '<div class="text-muted">Из блока пока не выходит ни одной стрелки.</div>';
 }
+// Заполнение формы перехода
 function editScenarioEdge(id) {
     const e = scenarioEdges.find(x => String(x.id) === String(id));
     if(!e) return;
@@ -1504,12 +1750,14 @@ function editScenarioEdge(id) {
     setVal('scenarioEdgeId', e.id);
     setVal('edgeLabel', e.label);
     setVal('edgeCondition', e.condition_text || '');
+    // Установка выбранного блока назначения
     setVal('edgeToNode', e.to_node_id);
     const btn = document.getElementById('cancelScenarioEdgeBtn');
     if(btn) btn.style.display = 'block';
     const saveBtn = document.getElementById('saveFlowEdgeBtn');
     if(saveBtn) saveBtn.innerText = 'Сохранить стрелку';
 }
+// Сброс формы перехода
 function resetScenarioEdgeForm(clear=true) {
     setVal('scenarioEdgeId','');
     setVal('edgeLabel','');
@@ -1518,8 +1766,10 @@ function resetScenarioEdgeForm(clear=true) {
     const btn = document.getElementById('cancelScenarioEdgeBtn');
     if(btn) btn.style.display = 'none';
     const saveBtn = document.getElementById('saveFlowEdgeBtn');
+    // Очистка полей перехода
     if(saveBtn) saveBtn.innerText = 'Добавить стрелку';
 }
+// Сохранение перехода сценария
 async function saveScenarioEdge() {
     await runSafe(async () => {
         if(!selectedScenarioNodeId) throw new Error('Сначала выберите блок, из которого выходит стрелка');
@@ -1528,6 +1778,7 @@ async function saveScenarioEdge() {
             bot_id:Number(activeBotId),
             from_node_id:Number(selectedScenarioNodeId),
             to_node_id:Number(val('edgeToNode')),
+            // Проверка текста перехода
             label:val('edgeLabel'),
             condition_text:val('edgeCondition'),
             sort_order:scenarioNodeOutgoing(selectedScenarioNodeId).length
@@ -1536,12 +1787,14 @@ async function saveScenarioEdge() {
         if(!body.to_node_id) throw new Error('Выберите блок назначения');
         const url = id ? `/scenarios/edges/${id}` : '/scenarios/edges';
         const method = id ? 'PUT' : 'POST';
+        // Отправка перехода на сервер
         await apiFetch(url, {method, headers:authHeaders({'Content-Type':'application/json'}), body:JSON.stringify(body)});
         resetScenarioEdgeForm();
         await loadScenarios();
         selectScenarioNode(selectedScenarioNodeId);
     }, val('scenarioEdgeId') ? 'Стрелка сохранена' : 'Стрелка добавлена');
 }
+// Удаление перехода сценария
 async function deleteScenarioEdge(id) {
     if(!confirm('Удалить эту стрелку?')) return;
     await runSafe(async () => {
@@ -1551,6 +1804,7 @@ async function deleteScenarioEdge(id) {
     }, 'Стрелка удалена');
 }
 
+// Отрисовка предпросмотра сценария
 function renderScenarioPreview() {
     const box = document.getElementById('scenarioUserPreview');
     if(!box) return;
@@ -1559,6 +1813,7 @@ function renderScenarioPreview() {
         box.innerHTML = 'Выберите блок, чтобы увидеть, как отобразится сценарий';
         return;
     }
+    // Подготовка кнопок предпросмотра
     const edges = scenarioNodeOutgoing(n.id);
     const buttons = edges.length
         ? edges.map(e => `<span class="flow-preview-button">${escapeHtml(e.label)}</span>`).join('')
@@ -1569,6 +1824,7 @@ function renderScenarioPreview() {
         <div class="border rounded p-2 bg-light mb-2"><b>Бот напишет:</b><br>${escapeHtml(n.message || _formatPreviewMessage(n))}</div>
         <div><b>Кнопки после сообщения:</b><br>${buttons}</div>`;
 }
+// Формирование текста предпросмотра
 function _formatPreviewMessage(n) {
     if(!n) return '';
     if(n.node_type === 'operator') return 'Передаю диалог оператору.';
@@ -1576,6 +1832,7 @@ function _formatPreviewMessage(n) {
     return 'Сообщение пока не заполнено.';
 }
 
+// Проверка структуры сценария
 function validateFlow(showToast=false) {
     const errors = [];
     const starts = scenarioNodes.filter(n => n.is_start);
@@ -1584,6 +1841,7 @@ function validateFlow(showToast=false) {
         renderValidationBox([]);
         return [];
     }
+    // Проверка наличия начального блока
     if(!starts.length) errors.push({nodeId:null, text:'Нет начального блока. Создайте блок “Начало” или отметьте блок как начальный.'});
 
     for(const n of scenarioNodes) {
@@ -1593,6 +1851,7 @@ function validateFlow(showToast=false) {
         if(['message','question'].includes(n.node_type) && outgoing.length === 0) {
             errors.push({nodeId:n.id, text:`Блок “${n.title}”: нет стрелок дальше. Добавьте стрелку или сделайте блок конечным.`});
         }
+    // Завершение проверки блока
     }
     for(const e of scenarioEdges) {
         if(!getScenarioNode(e.from_node_id) || !getScenarioNode(e.to_node_id)) errors.push({nodeId:e.from_node_id, text:`Стрелка “${e.label}” ведет к удаленному блоку.`});
@@ -1602,6 +1861,7 @@ function validateFlow(showToast=false) {
     const reachable = new Set();
     const walk = (id) => {
         if(!id || reachable.has(String(id))) return;
+        // Добавление блока в список достижимых
         reachable.add(String(id));
         scenarioNodeOutgoing(id).forEach(e => walk(e.to_node_id));
     };
@@ -1611,11 +1871,13 @@ function validateFlow(showToast=false) {
     });
 
     flowValidationErrors = errors;
+    // Обновление результата проверки
     renderValidationBox(errors);
     renderFlowBlocks();
     if(showToast) showNotice(errors.length ? `Найдено ошибок: ${errors.length}` : 'Сценарий выглядит корректно', errors.length ? 'danger' : 'success');
     return errors;
 }
+// Отрисовка панели проверки
 function renderValidationBox(errors) {
     const box = document.getElementById('flowValidationBox');
     if(!box) return;
@@ -1624,6 +1886,7 @@ function renderValidationBox(errors) {
         return;
     }
     if(!errors.length) {
+        // Сообщение об успешной проверке
         box.innerHTML = '<div class="text-success">Ошибок не найдено! </div>';
         return;
     }
@@ -1632,12 +1895,14 @@ function renderValidationBox(errors) {
 
 
 
+// Загрузка последних диалогов
 async function loadLogs() {
     if(!activeBotId) return;
     const data = await runSafe(() => apiFetch(`/logs?bot_id=${activeBotId}`, {headers: authHeaders()}));
     if(!data) return;
-    document.getElementById('logsContainer').innerHTML = (data.logs || []).map(l => `<div class="dialog-card card p-2 mb-2 ${l.is_operator_mode ? 'border-danger' : ''}" onclick="openDialog('${escapeAttr(l.messenger_user_id)}')"><div class="d-flex justify-content-between"><b>ID: ${escapeHtml(l.messenger_user_id)}</b><span class="badge ${l.is_operator_mode ? 'bg-danger' : 'bg-success'}">${l.is_operator_mode ? 'Нужен оператор' : 'Бот'}</span></div><div class="small text-truncate"><b>Юзер:</b> ${escapeHtml(l.user_text || '')}</div><div class="small text-muted text-truncate"><b>Ответ:</b> ${escapeHtml(l.bot_answer || '')}</div><div class="small text-muted">Источник: ${escapeHtml(l.answer_source || '')}</div></div>`).join('') || '<div class="text-muted">Диалогов пока нет.</div>';
+    document.getElementById('logsContainer').innerHTML = (data.logs || []).map(l => `<div class="dialog-card card p-2 mb-2 ${l.is_operator_mode ? 'border-danger' : ''}" onclick="openDialog('${escapeAttr(l.messenger_user_id)}')"><div class="d-flex justify-content-between"><b>ID: ${escapeHtml(l.messenger_user_id)}</b><span class="badge ${l.is_operator_mode ? 'bg-danger' : 'bg-success'}">${l.is_operator_mode ? 'Нужен оператор' : 'Бот'}</span></div><div class="small text-truncate"><b>Пользователь:</b> ${escapeHtml(l.user_text || '')}</div><div class="small text-muted text-truncate"><b>Ответ:</b> ${escapeHtml(l.bot_answer || '')}</div><div class="small text-muted">Источник: ${escapeHtml(l.answer_source || '')}</div></div>`).join('') || '<div class="text-muted">Диалогов пока нет.</div>';
 }
+// Открытие истории диалога
 async function openDialog(userId) {
     selectedDialogUserId = userId;
     document.getElementById('dialogTitle').innerText = 'Диалог с пользователем ID: ' + userId;
@@ -1645,6 +1910,7 @@ async function openDialog(userId) {
     if(!data) return;
     document.getElementById('dialogMessages').innerHTML = (data.messages || []).map(m => `<div class="mb-2 border-bottom pb-2"><div class="small text-muted">${formatDateTime(m.created_at)} · ${escapeHtml(m.answer_source || '')}</div><div><b>Пользователь:</b> ${escapeHtml(m.user_text || '')}</div><div><b>Ответ:</b> ${escapeHtml(m.bot_answer || '')}</div>${m.confidence ? `<div class="small text-muted">Уверенность: ${m.confidence}</div>` : ''}</div>`).join('');
 }
+// Отправка ручного ответа
 async function sendOperatorReply() {
     if(!selectedDialogUserId) return showNotice('Выберите диалог');
     const message = val('operatorMessage');
@@ -1653,7 +1919,9 @@ async function sendOperatorReply() {
         await apiFetch('/operator/reply', {method:'POST', headers:authHeaders({'Content-Type':'application/json'}), body:JSON.stringify({bot_id:Number(activeBotId), messenger_user_id:selectedDialogUserId, message})});
         setVal('operatorMessage',''); await openDialog(selectedDialogUserId); await loadLogs(); await loadAnalytics();
     }, 'Ответ отправлен');
+// Обновление диалога после ответа
 }
+// Возврат диалога боту
 async function finishDialog() {
     if(!selectedDialogUserId) return showNotice('Выберите диалог');
     await runSafe(async () => {
@@ -1662,6 +1930,7 @@ async function finishDialog() {
     }, 'Диалог возвращен боту');
 }
 
+// Сохранение оператора
 async function saveOperator() {
     if(!activeBotId) return showNotice('Сначала создайте бота');
     await runSafe(async () => {
@@ -1670,6 +1939,7 @@ async function saveOperator() {
         if(!body.username) throw new Error('Введите логин оператора');
         if(!id && !body.password) throw new Error('Введите пароль оператора');
         let url = '/operators';
+        // Выбор метода сохранения оператора
         let method = 'POST';
         if(id) {
             url = `/operators/${id}`;
@@ -1678,11 +1948,13 @@ async function saveOperator() {
             body.bot_ids = [Number(activeBotId)];
         }
         if(id && !body.password) delete body.password;
+        // Отправка данных оператора
         await apiFetch(url, {method, headers:authHeaders({'Content-Type':'application/json'}), body:JSON.stringify(body)});
         resetOperatorForm();
         await loadOperators();
     }, val('editOperatorId') ? 'Оператор обновлен' : 'Оператор создан');
 }
+// Заполнение формы оператора
 function editOperator(id) {
     const item = (window.currentOperators || []).find(x => String(x.id) === String(id));
     if(!item) return;
@@ -1691,10 +1963,12 @@ function editOperator(id) {
     setVal('opEmail', item.email || '');
     setVal('opPassword', '');
     document.getElementById('operatorFormTitle').innerText = 'Редактирование оператора';
+    // Изменение кнопки формы оператора
     document.getElementById('operatorSubmitBtn').innerText = 'Сохранить';
     document.getElementById('cancelOperatorEditBtn').style.display = 'block';
     document.getElementById('operatorPasswordHint').innerText = 'Оставьте пароль пустым, если его не нужно менять';
 }
+// Сброс формы оператора
 function resetOperatorForm() {
     setVal('editOperatorId','');
     setVal('opUsername','');
@@ -1703,8 +1977,10 @@ function resetOperatorForm() {
     const title = document.getElementById('operatorFormTitle'); if(title) title.innerText = 'Создать оператора';
     const submit = document.getElementById('operatorSubmitBtn'); if(submit) submit.innerText = 'Создать';
     const cancel = document.getElementById('cancelOperatorEditBtn'); if(cancel) cancel.style.display = 'none';
+    // Подсказка по паролю оператора
     const hint = document.getElementById('operatorPasswordHint'); if(hint) hint.innerText = 'Оператор будет привязан к активному боту';
 }
+// Удаление оператора
 async function deleteOperator(id) {
     if(!confirm('Удалить оператора? Он потеряет доступ к ботам, а его прошлые ответы останутся в логах.')) return;
     await runSafe(async () => {
@@ -1713,6 +1989,7 @@ async function deleteOperator(id) {
         await loadOperators();
     }, 'Оператор удален');
 }
+// Загрузка списка операторов
 async function loadOperators() {
     if(!isAdmin()) return;
     const data = await runSafe(() => apiFetch('/operators', {headers: authHeaders()}));
@@ -1721,7 +1998,9 @@ async function loadOperators() {
     document.getElementById('operatorsList').innerHTML = window.currentOperators.map(o => `<div class="border-bottom py-2"><div class="d-flex justify-content-between align-items-start gap-2"><div><b>${escapeHtml(o.username)}</b><div class="small text-muted">${escapeHtml(o.email || '')}</div></div><div class="text-nowrap"><button class="btn btn-sm btn-light" onclick="editOperator(${o.id})"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-light text-danger" onclick="deleteOperator(${o.id})"><i class="bi bi-trash"></i></button></div></div></div>`).join('') || '<div class="text-muted">Операторов пока нет.</div>';
 }
 
+// Заполнение формы сообщений бота
 function fillSettingsForm() { const b = activeBot(); if(!b) return; setVal('setGreeting', b.greeting_message || ''); setVal('setFallback', b.fallback_message || ''); setVal('setOperatorCalled', b.operator_called_message || ''); setVal('setOperatorFinished', b.operator_finished_message || ''); setVal('setConfirm', b.answer_confirmation_message || ''); setVal('setPositive', b.positive_close_message || ''); setVal('setRestart', b.restart_message || ''); }
+// Сохранение сообщений бота
 async function saveBotTexts() {
     await runSafe(async () => {
         const body = {greeting_message:val('setGreeting'), fallback_message:val('setFallback'), operator_called_message:val('setOperatorCalled'), operator_finished_message:val('setOperatorFinished'), answer_confirmation_message:val('setConfirm'), positive_close_message:val('setPositive'), restart_message:val('setRestart')};
