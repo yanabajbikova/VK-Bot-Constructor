@@ -274,7 +274,7 @@
 
         .section { display:none; }
         .section.active { display:block; }
-        .admin-only.hidden, .operator-hidden.hidden { display:none!important; }
+        .admin-only.hidden, .operator-hidden.hidden, .operator-readonly.hidden { display:none!important; }
 
 /* Карточка диалога */
         .dialog-card {
@@ -519,7 +519,7 @@
 
 <div id="authScreen" class="auth-bg">
     <div class="card auth-card p-4">
-        <h3 class="fw-bold mb-1">Констуктор ВК-ботов</h3>
+        <h3 class="fw-bold mb-1">Конструктор ВК-ботов</h3>
         <p class="text-muted mb-4">Войдите, чтобы управлять ботами</p>
         <ul class="nav nav-pills nav-fill mb-3">
             <li class="nav-item"><button id="loginTab" class="nav-link active" onclick="switchAuth('login')">Вход</button></li>
@@ -539,7 +539,7 @@
 <div id="appScreen" class="layout" style="display:none;">
 <!-- Боковая панель управления -->
     <aside class="sidebar">
-        <div class="brand"><span class="brand-mark">К-ВК</span><span>Констуктор ВК-ботов</span></div>
+        <div class="brand"><span class="brand-mark">К-ВК</span><span>Конструктор ВК-ботов</span></div>
         <label class="small text-secondary mb-1">Активный бот</label>
         <select id="activeBotSelect" class="form-select bot-select mb-3" onchange="changeBot()"></select>
         <div id="connectHint" class="small text-warning mb-3" style="display:none;">Создайте первого бота в разделе «Боты».</div>
@@ -548,8 +548,8 @@
         <nav class="nav flex-column">
             <a class="nav-link active" onclick="showSection('dashboard', this)">Статистика</a>
             <a class="nav-link admin-only" onclick="showSection('bots', this)">Боты</a>
-            <a class="nav-link admin-only" onclick="showSection('knowledge', this)">База знаний</a>
-            <a class="nav-link admin-only" onclick="showSection('intents', this)">Интенты</a>
+            <a class="nav-link" onclick="showSection('knowledge', this)">База знаний</a>
+            <a class="nav-link" onclick="showSection('intents', this)">Интенты</a>
             <a class="nav-link admin-only" onclick="showSection('scenarios', this)">Редактор сценариев</a>
             <a class="nav-link" onclick="showSection('dialogs', this)">Диалоги</a>
             <a class="nav-link admin-only" onclick="showSection('operators', this)">Операторы</a>
@@ -619,7 +619,7 @@
 <!-- Раздел базы знаний -->
         <section id="section-knowledge" class="section">
             <div class="row g-3">
-                <div class="col-lg-4">
+                <div id="knowledgeSidebarColumn" class="col-lg-4 admin-only">
                     <div class="card p-3 mb-3">
                         <h5 id="ruleFormTitle" class="fw-bold">Новый ответ</h5>
                         <input type="hidden" id="editRuleId">
@@ -648,12 +648,13 @@
                         <div id="categoriesContainer"></div>
                     </div>
                 </div>
-                <div class="col-lg-8">
+                <div id="knowledgeMainColumn" class="col-lg-8">
                     <div class="card p-3">
                         <div class="d-flex justify-content-between align-items-start mb-3 gap-2 flex-wrap">
                             <div>
                                 <h5 class="fw-bold m-0">База знаний</h5>
-                                <div class="small text-muted">Только простые ответы. Ветки и кнопки настраиваются в разделе «Редактор сценариев»</div>
+                                <div class="small text-muted admin-only">Только простые ответы. Ветки и кнопки настраиваются в разделе «Редактор сценариев»</div>
+                                <div class="small text-muted operator-readonly">Оператор может просматривать и искать готовые ответы без изменения базы знаний.</div>
                             </div>
                         </div>
 <!-- Фильтры базы знаний -->
@@ -671,7 +672,7 @@
                         <div class="table-responsive">
 <!-- Таблица ответов базы знаний -->
                             <table class="table table-hover">
-                                <thead><tr><th>Фразы</th><th>Категория</th><th>Интент</th><th>Ответ</th><th></th></tr></thead>
+                                <thead><tr><th>Фразы</th><th>Категория</th><th>Интент</th><th>Ответ</th><th class="admin-only"></th></tr></thead>
                                 <tbody id="rulesTable"></tbody>
                             </table>
                         </div>
@@ -683,7 +684,7 @@
 <!-- Раздел интентов -->
         <section id="section-intents" class="section">
             <div class="row g-3">
-                <div class="col-lg-4">
+                <div id="intentsSidebarColumn" class="col-lg-4 admin-only">
                     <div class="card p-3">
                         <h5 id="intentFormTitle" class="fw-bold">Новый интент</h5>
                         <input type="hidden" id="editIntentId">
@@ -702,20 +703,30 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8">
+                <div id="intentsMainColumn" class="col-lg-8">
                     <div class="card p-3">
                         <div class="d-flex justify-content-between align-items-start mb-3 gap-2 flex-wrap">
                             <div>
                                 <h5 class="fw-bold m-0">Интенты пользователей</h5>
+                                <div class="small text-muted operator-readonly">Оператор может просматривать интенты и искать подходящие заготовки без редактирования.</div>
                             </div>
-                            <div class="ms-auto">
-        <button class="btn btn-sm btn-outline-primary" onclick="trainBot()">Обучить</button>
-    </div>
+                            <div class="ms-auto admin-only">
+                                <button class="btn btn-sm btn-outline-primary" onclick="trainBot()">Обучить</button>
+                            </div>
+                        </div>
+<!-- Поиск интентов для администратора и оператора -->
+                        <div class="row g-2 mb-3">
+                            <div class="col-md-11">
+                                <input id="intentSearchInp" oninput="renderIntentsTable()" class="form-control form-control-sm" placeholder="Поиск по названию, примерам или ответу интента">
+                            </div>
+                            <div class="col-md-1 d-grid">
+                                <button class="btn btn-sm btn-light" title="Сбросить поиск" onclick="resetIntentFilters()"><i class="bi bi-x-lg"></i></button>
+                            </div>
                         </div>
 <!-- Таблица интентов -->
                         <div class="table-responsive">
                             <table class="table table-hover">
-                                <thead><tr><th>Название</th><th>Примеры</th><th>Ответ</th><th></th></tr></thead>
+                                <thead><tr><th>Название</th><th>Примеры</th><th>Ответ</th><th class="admin-only"></th></tr></thead>
                                 <tbody id="intentsTable"></tbody>
                             </table>
                         </div>
@@ -1016,6 +1027,24 @@ function showSection(name, el) {
 // Открытие раздела по названию
 function showSectionByName(name) { const link = [...document.querySelectorAll('.sidebar .nav-link')].find(a => a.textContent.toLowerCase().includes(sectionTitles()[name].toLowerCase())); showSection(name, link); }
 
+// Настройка ширины разделов для режима оператора
+function updateReadOnlySectionLayout() {
+    const readonlySections = [
+        {sidebar:'knowledgeSidebarColumn', main:'knowledgeMainColumn'},
+        {sidebar:'intentsSidebarColumn', main:'intentsMainColumn'}
+    ];
+    const adminMode = isAdmin();
+    // Для оператора растягиваем таблицу на всю ширину раздела
+    readonlySections.forEach(section => {
+        const sidebar = document.getElementById(section.sidebar);
+        const main = document.getElementById(section.main);
+        if (!main) return;
+        if (sidebar) sidebar.classList.toggle('hidden', !adminMode);
+        main.classList.toggle('col-lg-8', adminMode);
+        main.classList.toggle('col-lg-12', !adminMode);
+    });
+}
+
 // Запуск интерфейса после входа
 async function initApp() {
     if (!token || !currentUser) return;
@@ -1024,6 +1053,9 @@ async function initApp() {
     document.getElementById('userNameDisplay').innerText = currentUser.username;
     document.getElementById('userRoleDisplay').innerText = currentUser.role === 'admin' ? 'Администратор' : 'Оператор';
     document.querySelectorAll('.admin-only').forEach(el => el.classList.toggle('hidden', !isAdmin()));
+    document.querySelectorAll('.operator-readonly').forEach(el => el.classList.toggle('hidden', isAdmin()));
+    // Адаптация ширины таблиц для роли оператора
+    updateReadOnlySectionLayout();
     await loadBots();
     // Начальная загрузка завершена
 }
@@ -1146,6 +1178,7 @@ async function loadCategories() {
     }
     document.getElementById('categoriesContainer').innerHTML = cats.map(c => `<div class="border-bottom py-2"><div class="d-flex justify-content-between"><b>${escapeHtml(c.name)}</b><span><button class="btn btn-sm btn-light admin-only" onclick="editCategory('${escapeAttr(c.name)}','${escapeAttr(c.description || '')}')"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-light text-danger admin-only" onclick="deleteCategory('${escapeAttr(c.name)}')"><i class="bi bi-trash"></i></button></span></div><div class="small text-muted">${escapeHtml(c.description || '')}</div></div>`).join('');
     document.querySelectorAll('.admin-only').forEach(el => el.classList.toggle('hidden', !isAdmin()));
+    document.querySelectorAll('.operator-readonly').forEach(el => el.classList.toggle('hidden', isAdmin()));
 
 }
 // Сохранение категории базы знаний
@@ -1180,6 +1213,7 @@ async function loadRules() {
     document.getElementById('rulesTable').innerHTML = (data.rules || []).map(r => `<tr><td><b>${escapeHtml(r.keyword)}</b></td><td><span class="badge bg-light text-primary border">${escapeHtml(r.category)}</span></td><td>${r.intent_name ? `<span class="badge bg-light text-success border">${escapeHtml(r.intent_name)}</span>` : '<span class="text-muted">—</span>'}</td><td class="text-truncate" style="max-width:320px;">${escapeHtml(r.answer)}</td><td class="text-end admin-only"><button class="btn btn-sm btn-light" onclick="editRule(${r.id})"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-light text-danger" onclick="deleteRule(${r.id})"><i class="bi bi-trash"></i></button></td></tr>`).join('') || '<tr><td colspan="5" class="text-muted">Ответов пока нет.</td></tr>';
     // Применение прав администратора к таблице
     document.querySelectorAll('.admin-only').forEach(el => el.classList.toggle('hidden', !isAdmin()));
+    document.querySelectorAll('.operator-readonly').forEach(el => el.classList.toggle('hidden', isAdmin()));
 }
 
 // Сохранение ответа базы знаний
@@ -1213,21 +1247,45 @@ async function deleteRule(id) {
 
 // Загрузка интентов
 async function loadIntents() {
-    if(!activeBotId || !isAdmin()) return;
+    if(!activeBotId) return;
     const data = await runSafe(() => apiFetch(`/intents?bot_id=${activeBotId}`, {headers: authHeaders()}));
     if(!data) return;
     window.currentIntents = data.intents || [];
     const ruleSelect = document.getElementById('ruleIntentSelect');
-    if(ruleSelect) {
+    if(ruleSelect && isAdmin()) {
         const old = ruleSelect.value;
 
         ruleSelect.innerHTML = '<option value="">Не привязывать</option>' + window.currentIntents.map(i => `<option value="${i.id}">${escapeHtml(i.name)}</option>`).join('');
         ruleSelect.value = old;
     }
+    // Отрисовка таблицы интентов с учетом роли пользователя и поискового запроса
+    renderIntentsTable();
+}
+
+// Отрисовка таблицы интентов
+function renderIntentsTable() {
     const table = document.getElementById('intentsTable');
-    if(table) {
-         table.innerHTML = window.currentIntents.map(i => `<tr><td><b>${escapeHtml(i.name)}</b></td><td class="text-truncate" style="max-width:260px;">${escapeHtml(i.examples || '')}</td><td class="text-truncate" style="max-width:260px;">${escapeHtml(i.response || '')}</td><td class="text-end"><button class="btn btn-sm btn-light" onclick="editIntent(${i.id})"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-light text-danger" onclick="deleteIntent(${i.id})"><i class="bi bi-trash"></i></button></td></tr>`).join('') || '<tr><td colspan="4" class="text-muted">Интентов пока нет.</td></tr>';
-    }
+    if(!table) return;
+    const query = val('intentSearchInp').toLowerCase();
+    const source = window.currentIntents || [];
+    // Фильтрация интентов по названию, примерам фраз и резервному ответу
+    const filtered = source.filter(i => {
+        const text = `${i.name || ''} ${i.examples || ''} ${i.response || ''}`.toLowerCase();
+        return !query || text.includes(query);
+    });
+    const actionColumn = isAdmin()
+        ? i => `<td class="text-end admin-only"><button class="btn btn-sm btn-light" onclick="editIntent(${i.id})"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-light text-danger" onclick="deleteIntent(${i.id})"><i class="bi bi-trash"></i></button></td>`
+        : () => '<td class="text-end admin-only"></td>';
+
+    // Заполнение таблицы интентов для администратора и оператора
+    table.innerHTML = filtered.map(i => `<tr><td><b>${escapeHtml(i.name)}</b></td><td class="text-truncate" style="max-width:260px;">${escapeHtml(i.examples || '')}</td><td class="text-truncate" style="max-width:260px;">${escapeHtml(i.response || '')}</td>${actionColumn(i)}</tr>`).join('') || '<tr><td colspan="4" class="text-muted">Интентов не найдено.</td></tr>';
+    document.querySelectorAll('.admin-only').forEach(el => el.classList.toggle('hidden', !isAdmin()));
+}
+
+// Сброс поиска по интентам
+function resetIntentFilters() {
+    setVal('intentSearchInp', '');
+    renderIntentsTable();
 }
 // Сохранение интента
 async function saveIntent() {
